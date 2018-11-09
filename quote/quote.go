@@ -26,6 +26,7 @@ func New(symbols []string, key string) *API {
 	}
 }
 
+// GetImmediateStockQuote sends request to AA and returns stock quotes based on stored symbols in config file.
 func GetImmediateStockQuote(symbols []string, key string) {
 	client := http.DefaultClient
 	quote := API{
@@ -52,7 +53,11 @@ func GetImmediateStockQuote(symbols []string, key string) {
 
 		sB := string(body)
 		fmt.Printf(sB)
-		time.Sleep(12 * time.Second)
+
+		// AA allows 5 request per minute, this timer will limit to 5 requests per minute if over 5 symbols
+		if len(symbols) > 5 {
+			time.Sleep(12 * time.Second)
+		}
 	}
 
 }

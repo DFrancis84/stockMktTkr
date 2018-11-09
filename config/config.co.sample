@@ -1,7 +1,5 @@
 package config
 
-// Currently AA only allows you to process 5 requests per minutes.  This CLI is setup to process 7 stocks, with a 12 second delay between each request. If you have more or less, be sure to adjust the sleep timer in the quote.go file.  If symbols <= 5, remove the sleep timer.. If symbols is > 5 adjust sleep timer.
-
 // Use this template to setup your config with your AlphaVantage key
 func GetKey() (key string) {
 	key = ""
