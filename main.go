@@ -1,8 +1,8 @@
 package main
 
 import (
-	config "stockMkt/config"
-	quote "stockMkt/quote"
+	"stockMkt/config"
+	"stockMkt/quote"
 )
 
 var ()
